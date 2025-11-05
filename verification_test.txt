@@ -1,0 +1,26 @@
+===========================================
+VERIFICATION TEST: Unauthorized Access Attempt
+===========================================
+
+TEST USER: attacker
+TEST DATE: November 5, 2025
+OBJECTIVE: Verify hardening prevents unauthorized access
+
+TEST 1: Attempt to read database credentials
+Command: cat /home/user/linux_permissions_audit/db_config.txt
+Result: Permission denied
+
+TEST 2: Attempt to read private data
+Command: cat /home/user/linux_permissions_audit/private_data.txt
+Result: Permission denied
+
+TEST 3: Attempt to execute admin script
+Command: /home/user/linux_permissions_audit/admin_script.sh
+Result: Permission denied
+
+TEST 4: Attempt to write to shared folder
+Command: echo "hacked" > /home/user/linux_permissions_audit/shared_folder/hacked.txt
+Result: Permission denied
+
+CONCLUSION: All unauthorized access attempts blocked successfully.
+Hardening measures are effective.
