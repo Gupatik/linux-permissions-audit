@@ -1,0 +1,8 @@
+total 24
+drwxr-xr-x  3 user user 4096 Nov  5 21:29 .
+drwxr-x--- 14 user user 4096 Nov  5 21:24 ..
+-rw-rw-rw-  1 user user   32 Nov  5 21:26 admin_script.sh
+-rw-r--r--  1 user user    0 Nov  5 21:29 before_permissions.txt
+-rwxrwxrwx  1 user user   35 Nov  5 21:25 db_config.txt
+-rw-r--r--  1 user user   18 Nov  5 21:26 private_data.txt
+drwxrwxrwx  2 user user 4096 Nov  5 21:27 shared_folder

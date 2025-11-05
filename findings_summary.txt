@@ -1,0 +1,43 @@
+===========================================
+LINUX FILE PERMISSIONS SECURITY AUDIT
+Finding Summary Report
+===========================================
+
+AUDIT SCOPE:
+- Custom test environment in ~/linux_permissions_audit
+- System-wide critical file analysis
+- User permission validation
+
+VULNERABILITIES FOUND (Before Hardening):
+1. db_config.txt (777) - World-readable database credentials
+2. admin_script.sh (666) - World-writable administrative script
+3. private_data.txt (644) - Publicly readable sensitive data
+4. shared_folder (777) - World-writable directory
+
+SYSTEM FILE ANALYSIS:
+- /etc/passwd: 644 (SECURE - correct permissions)
+- /etc/shadow: 640 (SECURE - root and shadow group only)
+- /etc/sudoers: 440 (SECURE - read-only for root)
+- Home directories: 750 (SECURE - owner and group only)
+
+SUID/SGID FILES IDENTIFIED:
+- 10+ legitimate system binaries with elevated privileges
+- All are standard Ubuntu utilities (su, mount, passwd, etc.)
+- No suspicious or unauthorized SUID files detected
+
+HARDENING APPLIED:
+- db_config.txt: 777 -> 600 (owner read/write only)
+- admin_script.sh: 666 -> 700 (owner full access only)
+- private_data.txt: 644 -> 600 (owner read/write only)
+- shared_folder: 777 -> 755 (restricted write access)
+
+VERIFICATION TESTING:
+- Created test user "attacker"
+- Attempted unauthorized access to all hardened files
+- Result: All access attempts denied (Permission denied errors)
+- Hardening confirmed successful
+
+RISK ASSESSMENT:
+- Before: HIGH (unauthorized users could read credentials)
+- After: LOW (principle of least privilege applied)
+
