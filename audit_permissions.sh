@@ -1,7 +1,5 @@
 #!/bin/bash
 # Linux File Permissions Security Audit Script
-# Author: [Your Name]
-# Date: November 2025
 
 echo "==================================="
 echo "Linux File Permissions Audit Tool"
