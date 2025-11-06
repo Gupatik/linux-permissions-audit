@@ -1,6 +1,5 @@
 #!/bin/bash
 # Linux File Permissions Hardening Script
-# Author: [Your Name]
 
 echo "Starting permission hardening..."
 
